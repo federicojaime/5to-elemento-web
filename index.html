@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="no-js">
+<html lang="es" >
   <head>
     <!-- Mobile Specific Meta -->
     <meta
@@ -33,6 +33,47 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <div id='whatsapp-chat' class='hide'>
+      <div class='header-chat'>
+        <div class='head-home'>
+          <div class='info-avatar'><img src='img/logow.png' /></div>
+          <p><span class="whatsapp-name">Complejo 5to Elemento</span><br><small>Empezá a organizar tus vacaciones.</small></p>
+    
+        </div>
+        <div class='get-new hide'>
+          <div id='get-label'></div>
+          <div id='get-nama'></div>
+        </div>
+      </div>
+      <div class='home-chat'>
+    
+      </div>
+      <div class='start-chat'>
+        <div pattern="https://elfsight.com/assets/chats/patterns/whatsapp.png" class="WhatsappChat__Component-sc-1wqac52-0 whatsapp-chat-body">
+          <div class="WhatsappChat__MessageContainer-sc-1wqac52-1 dAbFpq">
+            <div style="opacity: 0;" class="WhatsappDots__Component-pks5bf-0 eJJEeC">
+              <div class="WhatsappDots__ComponentInner-pks5bf-1 hFENyl">
+                <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotOne-pks5bf-3 ixsrax"></div>
+                <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotTwo-pks5bf-4 dRvxoz"></div>
+                <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotThree-pks5bf-5 kXBtNt"></div>
+              </div>
+            </div>
+            <div style="opacity: 1;" class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq">
+              <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">Complejo 5to Elemento</div>
+              <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">Hola 👋<br><br>¿En que podemos ayudarte?</div>
+              <div class="WhatsappChat__Time-sc-1wqac52-5 cqCDVm">1:40</div>
+            </div>
+          </div>
+        </div>
+    
+        <div class='blanter-msg'>
+          <textarea id='chat-input' placeholder='Escribí tu respuesta' maxlength='120' row='10'></textarea>
+          <a href='javascript:void;' id='send-it'><svg viewBox="0 0 448 448"><path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"/></svg></a>
+        </div>
+      </div>
+      <div id='get-number'></div><a class='close-chat' href='javascript:void'>×</a>
+    </div>
+    <a class='blantershow-chat' href='javascript:void' title='Show Chat'><svg width="20" viewBox="0 0 24 24"><defs/><path fill="#eceff1" d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z"/><path fill="#4caf50" d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z"/><path fill="#fafafa" d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg> Chatéa con nosotros</a>
     <!-- start banner Area -->
     <section class="banner-area" id="home">
       <!-- Start Header Area -->
@@ -316,6 +357,7 @@
               </p>
             </div>
           </div>
+        </div>
       <div class="container-fluid">
         <div class="row no-padding">
           <div class="active-gallery">
@@ -425,14 +467,13 @@
         <form
           class="form-area"
           id="myForm"
-          action="mail.php"
-          method="post"
           class="contact-form text-right"
         >
           <div class="row">
             <div class="col-lg-6 form-group">
               <input
                 name="name"
+                id="name"
                 placeholder="Ingrese su nombre"
                 onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Ingrese su nombre'"
@@ -443,6 +484,7 @@
 
               <input
                 name="email"
+                id="email"
                 placeholder="Ingrese su email"
                 pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                 onfocus="this.placeholder = ''"
@@ -454,6 +496,7 @@
 
               <input
                 name="subject"
+                id="subject"
                 placeholder="Ingrese el asunto"
                 onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Ingrese el asunto'"
@@ -466,12 +509,13 @@
               <textarea
                 class="common-textarea mt-10 form-control"
                 name="message"
+                id="message"
                 placeholder="Ingrese el mensaje"
                 onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Ingrese el mensaje'"
                 required=""
               ></textarea>
-              <button class="primary-btn mt-20">
+              <button id="enviarCorreo" class="primary-btn mt-20">
                 Enviar<span class="lnr lnr-arrow-right"></span>
               </button>
               <div class="alert-msg"></div>
@@ -490,9 +534,9 @@
               <h6>Te esperamos</h6>
               <p>
                 <span class="lnr lnr-map-marker"></span>
-                Ruta 9 km. 6, 2do Badén. San Francisco del Monte de Oro, San Luis, Argentina.
+                <a class="sinDecoracion" href="https://www.facebook.com/quintoelemento.cabanas" target="_blank">Ruta 9 km. 6, 2do Badén. San Francisco del Monte de Oro, San Luis, Argentina.</a>
               </p>
-              <p class="footer-text">Copyright &copy;</p>
+              <p class="footer-text">Copyright &copy; <a href="https://instagram.com/visorahome_studio?igshid=MmVlMjlkMTBhMg=="> Visora</a>  & <a href="https://instagram.com/codeo.ar?igshid=MmVlMjlkMTBhMg=="> Codeo</a></p>
               
             </div>
           </div>
@@ -506,10 +550,10 @@
               <h6>¡Seguinos!</h6>
               <p>Nuestras redes son:</p>
               <div class="footer-social d-flex align-items-center">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-whatsapp"></i></a>
-                <a href="#"><i class="fa fa-google"></i></a>
+                <a href="https://www.facebook.com/quintoelemento.cabanas" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com/complejo_5to_elemento?igshid=MmVlMjlkMTBhMg==" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://walink.co/aa9d63"><i class="fa fa-whatsapp"></i></a>
+                <a href="mailto:info@complejo5toelemento.com.ar"><i class="fa fa-google"></i></a>
               </div>
             </div>
           </div>
@@ -532,5 +576,18 @@
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script> 
+      const btnEnvio = document.getElementById('enviarCorreo');
+      btnEnvio.addEventListener('click', function(e){
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+  
+        window.location.href = `mailto:info@complejo5toelemento.com.ar?subject=${subject}&body=Nombre%3A%20${name}%0AMail%3A%20${email}%0AMensaje%3A%20${message}`;
+         });
+      </script>
   </body>
 </html>
